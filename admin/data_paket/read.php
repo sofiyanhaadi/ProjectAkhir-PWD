@@ -1,6 +1,6 @@
 <?php 
     //panggil file koneksi ke database
-    include "dbconnect.php";
+    include "../../dbconnect.php";
     //sql query tabel data
     $sql = "SELECT * from tb_paket order by id_paket ASC";
     $query = mysqli_query($conn, $sql);

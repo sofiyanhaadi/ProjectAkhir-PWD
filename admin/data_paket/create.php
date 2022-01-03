@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <!-- FORM TAMBAH -->
-            <form method="post" action="data_paket/aksi_insert.php?act=tambahpaket" role="form">
+            <form method="post" action="aksi_insert.php?act=tambahpaket" role="form">
                     <div class="mb-3">
                         <label for="inputID" class="form-label">ID Paket</label>
                         <input type="text" class="form-control" name="id_paket" required>

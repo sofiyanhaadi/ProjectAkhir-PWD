@@ -1,5 +1,5 @@
 <?php 
-    include "../dbconnect.php";    
+    include "../../dbconnect.php";    
     if($_GET['act'] == 'updatepaket'){
         $id = $_POST['idpaket'];
         $paket = $_POST['paket'];
@@ -10,7 +10,7 @@
     
         if ($queryupdate) {
             # code redicet setelah insert ke index
-            header("location:../data_paket.php");
+            header("location:data_paket.php");
         }
         else{
             echo "ERROR, tidak berhasil". mysqli_error($conn);
