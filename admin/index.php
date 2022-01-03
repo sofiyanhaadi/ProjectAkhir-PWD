@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Admin</title>
+    <title>Dashboard | SPEEDNet</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css">
@@ -27,21 +27,16 @@
                             </a>
                         </li>
                         <li>
-                            <a href="settings.html" class="transition">
-                                <i class="las la-sliders-h"></i>
-                            </a>
-                        </li>
-                        <li>
                             <div class="dropdown">
-                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Hi, Admin
                                 </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="profile.html">My Profile</a>
-                                        <a class="dropdown-item" href="change-password.html">Change Password</a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
+                                        <li><a class="dropdown-item" href="change-password.html">Change Password</a></li>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="signout.html">Sign Out</a>
-                                    </div>
+                                        <li><a class="dropdown-item" href="logout.php">Sign Out</a></li>
+                                    </ul>
                             </div>
                         </li>
                     </ul>
@@ -74,7 +69,7 @@
                         </li>
                         <li>
                             <a href="data_pelanggan/data_pelanggan.php" class="transition">
-                                <i class="las la-archive"></i>
+                                <i class="las la-user"></i>
                                 <span>Data Pelanggan</span>
                             </a>
                         </li>

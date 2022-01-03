@@ -42,7 +42,7 @@
                                         <a class="dropdown-item" href="profile.html">My Profile</a>
                                         <a class="dropdown-item" href="change-password.html">Change Password</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="signout.html">Sign Out</a>
+                                        <a class="dropdown-item" href="../logout.php">Sign Out</a>
                                     </div>
                             </div>
                         </li>
@@ -124,7 +124,33 @@
 
             <div class="content transition">
                 <div class="container-fluid dashboard">
-                    
+                    <div class="container bg-light">
+                        <h2>Buat Tagihan</h2>
+                        <form>
+                            <div class="mb-3 row">
+                                <label for="bulan" class="col-sm-1 col-form-label">Bulan</label>
+                                <div class="col-sm-10">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="tahun" class="col-sm-1 col-form-label">Tahun</label>
+                                <div class="col-sm-10">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
 

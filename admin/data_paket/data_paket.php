@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Data Paket | SPEEDNet</title>
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
@@ -42,7 +42,7 @@
                                         <a class="dropdown-item" href="profile.html">My Profile</a>
                                         <a class="dropdown-item" href="change-password.html">Change Password</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="signout.html">Sign Out</a>
+                                        <a class="dropdown-item" href="../logout.php">Sign Out</a>
                                     </div>
                             </div>
                         </li>
