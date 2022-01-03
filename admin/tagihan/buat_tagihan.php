@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Data Pelanggan</title>
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
@@ -69,7 +69,7 @@
                         </li>
                         <p class="menu">Olah Data</p>
                         <li>
-                            <a href="data_paket.php" class="transition active">
+                            <a href="../data_paket/data_paket.php" class="transition">
                                 <i class="las la-archive"></i>
                                 <span>Data Paket</span>
                             </a>
@@ -82,7 +82,7 @@
                         </li>
                         <p class="menu">Tagihan dan Pembayaran</p>
                         <li>
-                            <a href="../tagihan/buat_tagihan.php" class="transition">
+                            <a href="buat_tagihan.php" class="transition active">
                                 <i class="las la-money-bill"></i>
                                 <span>Buat Tagihan</span>
                             </a>
@@ -124,34 +124,7 @@
 
             <div class="content transition">
                 <div class="container-fluid dashboard">
-                    <div class="d-sm-flex justify-content-between align-items-center">
-						<h2>Daftar Paket</h2>
-						<!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahModal">
-                        Tambah Data Paket
-                        </button>
-                        <?php include("create.php") ?>
-                    </div>
                     
-                    <!-- Konten Tabel -->
-                    <table id="tabel-paket" class="table table-dark table-striped table-bordered table-hover" style="width:100%">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>ID Paket</th>
-                                <th>Paket</th>
-                                <th>Tarif</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php   
-                            include("read.php");
-                            include("update.php");
-                            ?>
-
-
-                        </tbody>
-                    </table>
                 </div>
             </div>
 
@@ -195,9 +168,12 @@
                 dataType: "JSON",
                 success: function(data)
                 {                                    
-                    $("#id_paket").val(data.id_paket);                     
-                    $("#paket").val(data.paket);                     
-                    $("#tarif").val(data.tarif);                                         
+                    $("#id_pelanggan").val(data.id_pelanggan);                     
+                    $("#nama").val(data.nama);                     
+                    $("#alamat").val(data.alamat);
+                    $("#no_hp").val(data.no_hp);  
+                    $("#email").val(data.email);
+                    $("#paket").val(data.paket);                                           
                     $(".modal-update").modal('show');                             
                 }
             });    
@@ -210,7 +186,7 @@
                 url : "aksi_hapus.php?id="+id_data,
                 type : "GET",
                 success : function(data){
-                    window.location = "data_paket.php";
+                    window.location = "data_pelanggan.php";
                 }
             });
         });

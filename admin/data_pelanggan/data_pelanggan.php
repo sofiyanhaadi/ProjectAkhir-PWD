@@ -82,7 +82,7 @@
                         </li>
                         <p class="menu">Tagihan dan Pembayaran</p>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="../tagihan/buat_tagihan.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Buat Tagihan</span>
                             </a>

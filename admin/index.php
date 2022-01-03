@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Dashboard | Admin</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css">
@@ -80,7 +80,7 @@
                         </li>
                         <p class="menu">Tagihan dan Pembayaran</p>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="tagihan/buat_tagihan.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Buat Tagihan</span>
                             </a>
@@ -133,7 +133,14 @@
                                         </div>
                                         <div class="col-8">
                                             <p>Paket Tersedia</p>
-                                            <h5>$</h5>
+                                            <h5>
+                                                <?php
+                                                    $sql = "SELECT COUNT(id_paket) FROM tb_paket";
+                                                    $query = mysqli_query($conn, $sql);
+                                                    $data = mysqli_fetch_assoc($query);
+                                                    echo $data['COUNT(id_paket)'];
+                                                ?>
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -148,7 +155,14 @@
                                         </div>
                                         <div class="col-8">
                                             <p>Pelanggan</p>
-                                            <h5>3000</h5>
+                                            <h5>
+                                            <?php
+                                                    $sql = "SELECT COUNT(id_pelanggan) FROM tb_pelanggan";
+                                                    $query = mysqli_query($conn, $sql);
+                                                    $data = mysqli_fetch_assoc($query);
+                                                    echo $data['COUNT(id_pelanggan)'];
+                                                ?>
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -163,7 +177,7 @@
                                         </div>
                                         <div class="col-8">
                                             <p>Belum Bayar</p>
-                                            <h5>5500</h5>
+                                            <h5>0</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -178,7 +192,7 @@
                                         </div>
                                         <div class="col-8">
                                             <p>Lunas</p>
-                                            <h5>256</h5>
+                                            <h5>0</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -197,16 +211,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="assets/DataTables/DataTables-1.11.3/js/jquery.dataTables.min.js"></script>
-    <script src="assets/DataTables/DataTables-1.11.3/js/dataTables.bootstrap4.min.js"></script>
-    <script src="assets/DataTables/Buttons-2.1.1/js/dataTables.buttons.min.js"></script>
-    <script src="assets/DataTables/Buttons-2.1.1/js/buttons.bootstrap4.min.js"></script>
-    <script src="assets/DataTables/Buttons-2.1.1/js/buttons.bootstrap4.min.js"></script>
-    <script src="assets/DataTables/JSZip-2.5.0/jszip.min.js"></script>
-    <script src="assets/DataTables/pdfmake-0.1.36/pdfmake.min.js"></script>  
-    <script src="assets/DataTables/Buttons-2.1.1/js/buttons.html5.min.js"></script>                             
-    <script src="assets/DataTables/Buttons-2.1.1/js/buttons.print.min.js"></script>
-    <script src="assets/DataTables/Buttons-2.1.1/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#example').DataTable();
