@@ -99,12 +99,6 @@
                                 <span>Pengguna Sistem</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="page-layout.html" class="transition">
-                                <i class="las la-money-bill"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
 
                         
                     </ul>
