@@ -1,5 +1,5 @@
 # ProjectAkhir-PWD
-Merupakan Tugas Akhir dari Program Studi Pemrograman Web Dinamis
+Merupakan Tugas Akhir dari Mata Kuliah Pemrograman Web Dinamis
 
 Prodi Teknik Informatika
 Fakultas Komunikasi dan Informatika
