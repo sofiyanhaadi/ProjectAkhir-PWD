@@ -4,6 +4,8 @@ session_start();
 
 // menghubungkan php dengan koneksi database
 include 'dbconnect.php';
+date_default_timezone_set("Asia/Bangkok");
+$timenow = date("j-F-Y-h:i:s A");
 
 // menangkap data yang dikirim dari form login
 $username = $_POST['username'];
@@ -19,7 +21,7 @@ $cek = mysqli_num_rows($login);
 if($cek > 0){
 
 	$data = mysqli_fetch_assoc($login);
-
+	
 	// cek jika user login sebagai admin
 	if($data['level']=="admin"){
 
@@ -30,12 +32,14 @@ if($cek > 0){
 		header("location:admin/index.php");
 
 	// cek jika user login sebagai pegawai
-	}else if($data['level']=="pegawai"){
+	}else if($data['level']=="client"){
 		// buat session login dan username
 		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "pegawai";
-		// alihkan ke halaman dashboard pegawai
-		header("location:halaman_pegawai.php");
+		$_SESSION['level'] = "client";
+		$_SESSION['password'] = $password;
+
+		// alihkan ke halaman dashboard client
+		header("location:client/index.php");
 
 	}else{
 		// alihkan ke halaman login kembali

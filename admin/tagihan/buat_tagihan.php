@@ -88,7 +88,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="../data_tagihan/data_tagihan.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Data Tagihan</span>
                             </a>
@@ -106,12 +106,6 @@
                                 <span>Pengguna Sistem</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="logout.php" class="transition">
-                                <i class="las la-money-bill"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
 
                         
                     </ul>
@@ -122,8 +116,7 @@
 
             <!-- Content -->
             <div class="content transition">
-                <div class="container-fluid dashboard">
-                    <div class="container bg-light">
+                <div class="card-body bg-light">
                         <div class="row">
                             <h2>Buat Tagihan</h2>
                         </div>
@@ -192,7 +185,6 @@
                             </div>
                             <button type="submit" class="btn ms-4 mb-3 mt-5 btn-primary btn-sm">Buat Tagihan</button>
                         </form>
-                    </div>
                 </div>
             </div>
 

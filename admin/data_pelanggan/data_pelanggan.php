@@ -106,14 +106,6 @@
                                 <span>Pengguna Sistem</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="logout.php" class="transition">
-                                <i class="las la-money-bill"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
-
-                        
                     </ul>
                 </div>
             </div>
@@ -123,7 +115,7 @@
             <!-- Content -->
 
             <div class="content transition">
-                <div class="container-fluid dashboard">
+                <div class="card-body bg-light">
                     <div class="d-sm-flex justify-content-between align-items-center">
 						<h2>Daftar Pelanggan</h2>
 						<!-- Button trigger modal -->

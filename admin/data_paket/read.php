@@ -5,11 +5,13 @@
     $sql = "SELECT * from tb_paket order by id_paket ASC";
     $query = mysqli_query($conn, $sql);
 ?>      
-    <?php foreach ($query as $row): ?>
+    <?php foreach ($query as $row): 
+        
+        ?>
       <tr>
           <td><?= $row["id_paket"] ?></td>
           <td><?= $row["paket"] ?></td>
-          <td><?= $row["tarif"] ?></td>
+          <td><?= "Rp " . number_format($row["tarif"],2,',','.'); ?></td>
           <td>
               <button type="button" class="btn btn-warning btn-sm edit" data-id="<?= $row["id_paket"] ?>" >Edit</a>
               <button type="button" class="btn btn-danger btn-sm hapus" data-id="<?= $row["id_paket"] ?>">Hapus</button>

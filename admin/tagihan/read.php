@@ -9,7 +9,7 @@
         <tr>
             <td><?= $row["nama"] ?></td>
             <td><?= $row["paket"] ?></td>
-            <td><?= $row["tarif"] ?></td>
+            <td><?= "Rp " . number_format($row["tarif"],2,',','.'); ?></td>
         </tr>
       <?php endforeach ?>
     
