@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Paket | SPEEDNet</title>
+    <title>Administrator | SPEEDNet</title>
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
@@ -35,15 +35,15 @@
                         </li>
                         <li>
                             <div class="dropdown">
-                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Hi, Admin
-                                </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
-                                        <li><a class="dropdown-item" href="change-password.html">Change Password</a></li>
-                                        <div class="dropdown-divider"></div>
-                                        <li><a class="dropdown-item" href="../logout.php">Sign Out</a></li>
-                                    </ul>
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Hi, Admin
+                                    </a>
+                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                            <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
+                                            <li><a class="dropdown-item" href="change-password.html">Change Password</a></li>
+                                            <div class="dropdown-divider"></div>
+                                            <li><a class="dropdown-item" href="../logout.php">Sign Out</a></li>
+                                        </ul>
                             </div>
                         </li>
                     </ul>
@@ -69,7 +69,7 @@
                         </li>
                         <p class="menu">Olah Data</p>
                         <li>
-                            <a href="data_paket.php" class="transition active">
+                            <a href="../data_paket/data_paket.php" class="transition">
                                 <i class="las la-archive"></i>
                                 <span>Data Paket</span>
                             </a>
@@ -101,7 +101,7 @@
                         </li>
                         <p class="menu">Admin</p>
                         <li>
-                            <a href="../pengguna/pengguna.php" class="transition">
+                            <a href="pengguna.php" class="transition active">
                                 <i class="las la-money-bill"></i>
                                 <span>Pengguna Sistem</span>
                             </a>
@@ -117,21 +117,21 @@
             <div class="content transition">
                 <div class="card-body bg-light">
                     <div class="d-sm-flex justify-content-between align-items-center">
-						<h2>Daftar Paket</h2>
-						<!-- Button trigger modal -->
+						<h2>Pengguna Sistem</h2>
+                        <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahModal">
-                        Tambah Data Paket
+                        Tambah Pengguna
                         </button>
                         <?php include("create.php") ?>
                     </div>
                     
                     <!-- Konten Tabel -->
-                    <table id="tabel-paket" class="table table-dark table-striped table-bordered table-hover" style="width:100%">
+                    <table id="tabel-user" class="table table-dark table-striped table-bordered table-hover" style="width:100%">
                         <thead class="thead-dark">
                             <tr>
-                                <th>ID Paket</th>
-                                <th>Paket</th>
-                                <th>Tarif</th>
+                                <th>Nama</th>
+                                <th>Username</th>
+                                <th>Level</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -144,9 +144,6 @@
                     </table>
                 </div>
             </div>
-
-            
-
 
             <div class="footer transition">
                 <p>&copy; 2021 All Right Reserved by <a href="#">SPEEDNet</a></p>
@@ -161,7 +158,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#tabel-paket').DataTable();
+            $('#tabel-user').DataTable();
         } );
     </script>
 
@@ -174,7 +171,7 @@
         });
     </script>
 
-    <script>
+<script>
     $(document).ready(function () {
         //ajax edit data
         $(".edit").off("click").on("click",function() {              
@@ -185,9 +182,9 @@
                 dataType: "JSON",
                 success: function(data)
                 {                                    
-                    $("#id_paket").val(data.id_paket);                     
-                    $("#paket").val(data.paket);                     
-                    $("#tarif").val(data.tarif);                                         
+                    $("#id_pengguna").val(data.id_pengguna);                     
+                    $("#username").val(data.username);                     
+                    $("#nama").val(data.nama_pengguna);                                            
                     $(".modal-update").modal('show');                             
                 }
             });    
@@ -200,7 +197,7 @@
                 url : "aksi_hapus.php?id="+id_data,
                 type : "GET",
                 success : function(data){
-                    window.location = "data_paket.php";
+                    window.location = "pengguna.php";
                 }
             });
         });

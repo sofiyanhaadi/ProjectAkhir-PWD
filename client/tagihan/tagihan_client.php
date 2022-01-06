@@ -35,7 +35,7 @@
                         <li>
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Hi, Sobat
+                                Hi, <?php echo $_SESSION['username'] ?>
                                 </a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
                                         <li><a class="dropdown-item" href="profile.html">My Profile</a></li>

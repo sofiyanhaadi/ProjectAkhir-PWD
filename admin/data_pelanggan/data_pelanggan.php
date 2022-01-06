@@ -88,20 +88,20 @@
                             </a>
                         </li>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="../data_tagihan/data_tagihan.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Data Tagihan</span>
                             </a>
                         </li>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="../lunas/lunas.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Pembayaran Lunas</span>
                             </a>
                         </li>
                         <p class="menu">Admin</p>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="../pengguna/pengguna.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Pengguna Sistem</span>
                             </a>

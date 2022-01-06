@@ -13,6 +13,10 @@
     <?php 
         include('../dbconnect.php');
         session_start();
+         
+	    if($_SESSION['status']!="login"){
+		header("location:../index.php?pesan=belum_login");}
+
         $pass = $_SESSION['password'];
         $query = mysqli_query($conn, "SELECT * FROM tb_pelanggan WHERE password='$pass'");
         $data = mysqli_fetch_assoc($query);
@@ -36,7 +40,7 @@
                         <li>
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Hi, Sobat 
+                                Hi, <?php echo $_SESSION['username'] ?> 
                                 </a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
                                         <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
@@ -88,7 +92,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-sm-flex justify-content-between align-items-center">
-                                        <h3>Selamat Datang</h3>
+                                        <h3>Selamat Datang, <?php echo $data['nama'] ?></h3>
                                         <h3 id="timestamp"></h3>
                                     </div>
                                     <div class="market-status-table mt-4">

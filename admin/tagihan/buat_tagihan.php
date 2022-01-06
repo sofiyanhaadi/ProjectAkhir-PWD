@@ -94,20 +94,18 @@
                             </a>
                         </li>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="../lunas/lunas.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Pembayaran Lunas</span>
                             </a>
                         </li>
                         <p class="menu">Admin</p>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="../pengguna/pengguna.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Pengguna Sistem</span>
                             </a>
-                        </li>
-
-                        
+                        </li>  
                     </ul>
                 </div>
             </div>
@@ -128,18 +126,18 @@
                                     <div class="col-auto">
                                         <select name="bulan" id="bulan" class="form-select" aria-label="Default select example" required>
                                             <option disabled selected>--Pilih Bulan--</option>
-                                            <option value="januari">Januari</option>
-                                            <option value="februari">Februari</option>
-                                            <option value="maret">Maret</option>
-                                            <option value="april">April</option>
-                                            <option value="mei">Mei</option>
-                                            <option value="juni">Juni</option>
-                                            <option value="juli">Juli</option>
-                                            <option value="agustus">Agustus</option>
-                                            <option value="september">September</option>
-                                            <option value="oktober">Oktober</option>
-                                            <option value="november">November</option>
-                                            <option value="desember">Desember</option>
+                                            <option value="Januari">Januari</option>
+                                            <option value="Februari">Februari</option>
+                                            <option value="Maret">Maret</option>
+                                            <option value="April">April</option>
+                                            <option value="Mei">Mei</option>
+                                            <option value="Juni">Juni</option>
+                                            <option value="Juli">Juli</option>
+                                            <option value="Agustus">Agustus</option>
+                                            <option value="September">September</option>
+                                            <option value="Oktober">Oktober</option>
+                                            <option value="November">November</option>
+                                            <option value="Desember">Desember</option>
                                         </select>
                                     </div>
                                 </div>

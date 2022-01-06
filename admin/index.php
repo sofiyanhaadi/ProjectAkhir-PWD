@@ -10,7 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <?php include('../dbconnect.php') ?>
+    <?php include('../dbconnect.php');
+     
+	session_start();
+	if($_SESSION['status']!="login"){
+		header("location:../index.php?pesan=belum_login");
+	}
+    ?>
     <div class="topbar transition">
                 <div class="bars">
                     <button type="button" class="btn transition" id="sidebar-toggle">
@@ -87,14 +93,14 @@
                             </a>
                         </li>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="lunas/lunas.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Pembayaran Lunas</span>
                             </a>
                         </li>
                         <p class="menu">Admin</p>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="pengguna/pengguna.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Pengguna Sistem</span>
                             </a>
@@ -166,7 +172,14 @@
                                         </div>
                                         <div class="col-8">
                                             <p>Belum Bayar</p>
-                                            <h5>0</h5>
+                                            <h5>
+                                            <?php
+                                                    $sql = "SELECT COUNT(id_tagihan) FROM tb_tagihan WHERE status='BL'";
+                                                    $query = mysqli_query($conn, $sql);
+                                                    $data = mysqli_fetch_assoc($query);
+                                                    echo $data['COUNT(id_tagihan)'];
+                                            ?>
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +194,14 @@
                                         </div>
                                         <div class="col-8">
                                             <p>Lunas</p>
-                                            <h5>0</h5>
+                                            <h5>
+                                            <?php
+                                                    $sql = "SELECT COUNT(id_tagihan) FROM tb_tagihan WHERE status='LS'";
+                                                    $query = mysqli_query($conn, $sql);
+                                                    $data = mysqli_fetch_assoc($query);
+                                                    echo $data['COUNT(id_tagihan)'];
+                                            ?>
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>

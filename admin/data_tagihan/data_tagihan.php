@@ -94,26 +94,18 @@
                             </a>
                         </li>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="../lunas/lunas.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Pembayaran Lunas</span>
                             </a>
                         </li>
                         <p class="menu">Admin</p>
                         <li>
-                            <a href="page-layout.html" class="transition">
+                            <a href="../pengguna/pengguna.php" class="transition">
                                 <i class="las la-money-bill"></i>
                                 <span>Pengguna Sistem</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="logout.php" class="transition">
-                                <i class="las la-money-bill"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
-
-                        
                     </ul>
                 </div>
             </div>
@@ -127,30 +119,72 @@
                     <div class="d-sm-flex justify-content-between align-items-center">
 						<h2>Daftar Tagihan</h2>
                     </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    <!-- Konten Tabel -->
-                    <!-- <table id="tabel-paket" class="table table-dark table-striped table-bordered table-hover" style="width:100%">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Nama</th>
-                                <th>Tagihan</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php   
-                            //include("read.php");
+                    <form method="post" action="data_tagihan.php?page=tagihan">
+                            <div class="row">
+                                <div class="mb-3 col">
+                                    <label for="bulan" class="col-sm-1 col-form-label">Bulan</label>
+                                    <div class="col-auto">
+                                        <select name="bulan" id="bulan" class="form-select" aria-label="Default select example" required>
+                                            <option disabled selected>--Pilih Bulan--</option>
+                                            <option value="Januari">Januari</option>
+                                            <option value="Februari">Februari</option>
+                                            <option value="Maret">Maret</option>
+                                            <option value="April">April</option>
+                                            <option value="Mei">Mei</option>
+                                            <option value="Juni">Juni</option>
+                                            <option value="Juli">Juli</option>
+                                            <option value="Agustus">Agustus</option>
+                                            <option value="September">September</option>
+                                            <option value="Oktober">Oktober</option>
+                                            <option value="November">November</option>
+                                            <option value="Desember">Desember</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col">
+                                    <label for="tahun" class="col-sm-1 col-form-label">Tahun</label>
+                                    <div class="col-auto">
+                                        <select name="tahun" id="tahun" class="form-select" aria-label="Default select example" required>
+                                            <option disabled selected>--Pilih Tahun--</option>
+                                            <!-- PILIHAN TAHUN -->
+                                            <?php
+                                                $tahun_skrg = date('Y');
+                                                echo "<option value='$tahun_skrg'>$tahun_skrg</option>";
+                                                $thn_lalu = [];
+                                                for ($i = 1; $i < 10; $i++){
+                                                    $thn = date('Y', strtotime("-$i year", strtotime($tahun_skrg)));
+                                                    array_push($thn_lalu, $thn);
+                                                }
+                                                foreach ($thn_lalu as $val):
+                                                    echo "<option value='$val'>$val</option>";
+                                                endforeach
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col">
+                                    <label for="tahun" class="col-sm-1 col-form-label">Submit</label>
+                                    <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary">Tampilkan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <?php 
+                            if(isset($_GET['page'])){
+                                $page = $_GET['page'];
+                                switch ($page) {
+                                    case 'bayar':
+                                    include "bayar.php";
+                                    break;
+                                    case 'tagihan':
+                                    include "show_data.php";
+                                    break;          
+                                }
+                            }
                             ?>
-
-
-                        </tbody>
-                    </table> -->
+                        
                 </div>
             </div>
 
@@ -181,40 +215,6 @@
 		        $(".sidebar-overlay").toggleClass("d-block");
 	        });
         });
-    </script>
-
-    <script>
-    $(document).ready(function () {
-        //ajax edit data
-        $(".edit").off("click").on("click",function() {              
-           var id_data = $(this).attr("data-id");
-           $.ajax({                        
-                url : "aksi_edit.php?id="+id_data,
-                type: "GET",
-                dataType: "JSON",
-                success: function(data)
-                {                                    
-                    $("#id_paket").val(data.id_paket);                     
-                    $("#paket").val(data.paket);                     
-                    $("#tarif").val(data.tarif);                                         
-                    $(".modal-update").modal('show');                             
-                }
-            });    
-        });
-        
-        //ajax hapus data pegawai
-        $(".hapus").off("click").on("click",function(){
-            var id_data = $(this).attr("data-id");
-            $.ajax({
-                url : "aksi_hapus.php?id="+id_data,
-                type : "GET",
-                success : function(data){
-                    window.location = "data_tagihan.php";
-                }
-            });
-        });
-        
-    });
     </script>
 
 </body>

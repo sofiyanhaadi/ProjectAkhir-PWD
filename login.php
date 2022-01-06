@@ -9,7 +9,7 @@ $timenow = date("j-F-Y-h:i:s A");
 
 // menangkap data yang dikirim dari form login
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = md5($_POST['password']);
 
 
 // menyeleksi data user dengan username dan password yang sesuai
@@ -28,6 +28,7 @@ if($cek > 0){
 		// buat session login dan username
 		$_SESSION['username'] = $username;
 		$_SESSION['level'] = "admin";
+		$_SESSION['status'] = "login";
 		// alihkan ke halaman dashboard admin
 		header("location:admin/index.php");
 
@@ -36,6 +37,7 @@ if($cek > 0){
 		// buat session login dan username
 		$_SESSION['username'] = $username;
 		$_SESSION['level'] = "client";
+		$_SESSION['status'] = "login";
 		$_SESSION['password'] = $password;
 
 		// alihkan ke halaman dashboard client
