@@ -53,7 +53,7 @@
             <div class="sidebar transition">
                 <div class="logo">
                     <a href="#">
-                        <p style="font-size: 24px; font-weight: bold; margin-bottom: 0;">SPEEDNet</p>
+                        <img src="../../assets/logo/speednet.png" class="img-fluid pt-2 ps-3" alt="SPEEDNET.png">
                     </a>
                 </div>
 
@@ -83,13 +83,13 @@
                         <p class="menu">Tagihan dan Pembayaran</p>
                         <li>
                             <a href="buat_tagihan.php" class="transition active">
-                                <i class="las la-money-bill"></i>
+                                <i class="las la-edit"></i>
                                 <span>Buat Tagihan</span>
                             </a>
                         </li>
                         <li>
                             <a href="../data_tagihan/data_tagihan.php" class="transition">
-                                <i class="las la-money-bill"></i>
+                                <i class="las la-file-invoice"></i>
                                 <span>Data Tagihan</span>
                             </a>
                         </li>
@@ -102,7 +102,7 @@
                         <p class="menu">Admin</p>
                         <li>
                             <a href="../pengguna/pengguna.php" class="transition">
-                                <i class="las la-money-bill"></i>
+                                <i class="las la-user-shield"></i>
                                 <span>Pengguna Sistem</span>
                             </a>
                         </li>  

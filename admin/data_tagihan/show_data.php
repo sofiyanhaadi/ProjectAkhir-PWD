@@ -17,21 +17,21 @@
                         $bulan = $_POST['bulan'];
                         $tahun = $_POST['tahun'];
 
-                        if($bulan == 0 && $tahun == 0){
+                        if($bulan == NULL && $tahun == NULL){
                             echo "
                             <script>
                                 alert('Anda belum memasukkan Bulan dan Tahun !');
                                 document.location.href = 'data_tagihan.php';
                             </script>
                         ";
-                        }if($bulan == 0){
+                        }if($bulan == NULL){
                             echo "
                             <script>
                                 alert('Anda belum memasukkan Bulan !');
                                 document.location.href = 'data_tagihan.php';
                             </script>
                         ";
-                        }if($tahun == 0){
+                        }if($tahun == NULL){
                             echo "
                             <script>
                                 alert('Anda belum memasukkan Tahun !');

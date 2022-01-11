@@ -68,7 +68,7 @@
                         </li>
                         <li>
                             <a href="index.php" class="transition active">
-                                <i class="las la-tachometer-alt"></i>
+                                <i class="las la-file-invoice"></i>
                                 <span>Data Tagihan</span>
                             </a>
                         </li>
